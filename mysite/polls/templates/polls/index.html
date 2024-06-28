@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>投票</title>
+</head>
+<body>
+    <h1>请选择一个选项进行投票：</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for day in days %}
+            <input type="radio" id="{{ day }}" name="day" value="{{ day }}">
+            <label for="{{ day }}">{{ day }}</label><br>
+        {% endfor %}
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>
